@@ -11,6 +11,16 @@ return require("packer").startup({
       "williamboman/nvim-lsp-installer",
       "neovim/nvim-lspconfig",
     }
+    use({
+      'ray-x/navigator.lua',
+      requires = {
+        { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+        { 'neovim/nvim-lspconfig' },
+      },
+      config = function()
+        require("navigator").setup()
+      end
+    })
     -- Telescope
     use({
       "nvim-telescope/telescope.nvim",
