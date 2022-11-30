@@ -4,7 +4,7 @@ return require("packer").startup({
     use("wbthomason/packer.nvim")
 
     -- Tmux navigator
-    -- use("christoomey/vim-tmux-navigator")
+    use("christoomey/vim-tmux-navigator")
 
     -- lsp
     use {
@@ -181,13 +181,13 @@ return require("packer").startup({
 
     -- my old plugins
     use("ethanholz/nvim-lastplace") -- this is a rewrite of farmergreg/vim-lastplace
-    use {
+    use({
       "sitiom/nvim-numbertoggle",
       config = function()
         require("numbertoggle").setup()
       end
-    }
-    use {
+    })
+    use({
       "kevinhwang91/nvim-hlslens",
       config = function ()
         require('hlslens').setup()
@@ -207,9 +207,9 @@ return require("packer").startup({
 
         vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
       end
-    }
+    })
     use("junegunn/vim-peekaboo")
-    use {
+    use({
       "ahmedkhalf/project.nvim",
       config = function()
         require("project_nvim").setup {
@@ -218,30 +218,30 @@ return require("packer").startup({
           -- refer to the configuration section below
         }
       end
-    }
-    use{
+    })
+    use({
       "petertriho/nvim-scrollbar",
       config = function()
         require("scrollbar").setup()
       end
-    }
-    use {
+    })
+    use({
       'lewis6991/gitsigns.nvim',
       config = function()
         require('gitsigns').setup()
       end
-    }
+    })
     use("wincent/terminus")
     use("roxma/vim-tmux-clipboard")
     use("alcesleo/vim-uppercase-sql")
-    use{
+    use({
       "frazrepo/vim-rainbow",
       vim.cmd([[
       syntax on
       let g:rainbow_active = 1
       ]])
 
-    }
+    })
 
 
   end,

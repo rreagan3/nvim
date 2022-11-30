@@ -1,6 +1,9 @@
 -- basic settings and options
 require("options")
 
+-- install packer
+require("install-packer")
+
 -- load all the plugins
 require("load-plugins")
 
