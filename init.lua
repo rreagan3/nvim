@@ -8,7 +8,9 @@ require("install-packer")
 require("load-plugins")
 
 -- set up language servers
-require("nvim-lsp-installer").setup {}
+-- require("nvim-lsp-installer").setup {}
+require("mason").setup {}
+require("mason-lspconfig").setup {}
 require("ls")
 
 -- set up treesitter

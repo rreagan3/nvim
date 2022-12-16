@@ -8,7 +8,8 @@ return require("packer").startup({
 
     -- lsp
     use {
-      "williamboman/nvim-lsp-installer",
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     }
     use({
@@ -21,6 +22,7 @@ return require("packer").startup({
         require("navigator").setup()
       end
     })
+
     -- Telescope
     use({
       "nvim-telescope/telescope.nvim",
@@ -243,6 +245,16 @@ return require("packer").startup({
 
     })
 
+    use({
+      "lukas-reineke/indent-blankline.nvim",
+      config = function()
+        require("indent-blankline").setup {
+          -- for example, context is off by default, use this to turn it on
+          show_current_context = true,
+          show_current_context_start = true,
+        }
+      end
+    })
 
   end,
 })

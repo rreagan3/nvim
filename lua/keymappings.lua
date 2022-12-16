@@ -72,6 +72,7 @@ local mappings = {
     { "<leader>ev", ":split $MYVIMRC" },
     { "<space>", "za" },
     { "gV", "`[v`]" },
+    { "<leader>f", ":Format<CR>"},
   },
   t = {
     -- Terminal mode
