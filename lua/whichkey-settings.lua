@@ -116,7 +116,7 @@ wk.register({
   },
   l = {
     name = "LSP",
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },
+    f = { "<cmd>lua vim.lsp.buf.format({async true})<CR>", "Format File" },
     d = { "<cmd>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
     r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
     R = { "<cmd> lua vim.lsp.buf.references()<CR>", "List references" },

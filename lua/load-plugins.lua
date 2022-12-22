@@ -30,10 +30,7 @@ return require("packer").startup({
     })
 
     -- Treesitter
-    use({
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-    })
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", })
 
     -- LuaLine
     use({
@@ -115,7 +112,6 @@ return require("packer").startup({
 
     -- Folke plugins
     -- Theme
-    use("folke/tokyonight.nvim")
     use("EdenEast/nightfox.nvim")
     use("tomasr/molokai")
     use("nanotech/jellybeans.vim")
@@ -173,7 +169,7 @@ return require("packer").startup({
     use({
       "rmagatti/session-lens",
       config = function()
-        require("session-lens").setup({--[[your custom config--]]
+        require("session-lens").setup({ --[[your custom config--]]
         })
       end,
     })
@@ -191,10 +187,10 @@ return require("packer").startup({
     })
     use({
       "kevinhwang91/nvim-hlslens",
-      config = function ()
+      config = function()
         require('hlslens').setup()
 
-        local kopts = {noremap = true, silent = true}
+        local kopts = { noremap = true, silent = true }
 
         vim.api.nvim_set_keymap('n', 'n',
           [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
@@ -233,6 +229,10 @@ return require("packer").startup({
         require('gitsigns').setup()
       end
     })
+
+    -- git blames?
+    use('f-person/git-blame.nvim')
+
     use("wincent/terminus")
     use("roxma/vim-tmux-clipboard")
     use("alcesleo/vim-uppercase-sql")
@@ -245,16 +245,16 @@ return require("packer").startup({
 
     })
 
-    use({
-      "lukas-reineke/indent-blankline.nvim",
-      config = function()
-        require("indent-blankline").setup {
-          -- for example, context is off by default, use this to turn it on
-          show_current_context = true,
-          show_current_context_start = true,
-        }
-      end
-    })
+    -- use({
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   config = function()
+    --     require("indent-blankline").setup {
+    --       -- for example, context is off by default, use this to turn it on
+    --       show_current_context = true,
+    --       show_current_context_start = true,
+    --     }
+    --   end
+    -- })
 
   end,
 })

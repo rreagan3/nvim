@@ -4,10 +4,12 @@ require("nvim-treesitter.configs").setup({
   },
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   -- ignore_install = {}, -- List of parsers to ignore installing
+  auto_install = true,
   highlight = {
     enable = true, -- false will disable the whole extension
     -- disable = { "html" }, -- FIX: disabled for now https://github.com/nvim-treesitter/nvim-treesitter/issues/1788
   },
+  additional_vim_regex_highlighting = false,
   autotag = { enable = true },
   indent = {
     enable = true,
