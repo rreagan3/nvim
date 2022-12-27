@@ -111,7 +111,8 @@ return require("packer").startup({
     use("onsails/lspkind-nvim")
 
     -- Folke plugins
-    -- Theme
+    -- Themes
+    use("folke/tokyonight.nvim")
     use("EdenEast/nightfox.nvim")
     use("tomasr/molokai")
     use("nanotech/jellybeans.vim")
@@ -179,12 +180,6 @@ return require("packer").startup({
 
     -- my old plugins
     use("ethanholz/nvim-lastplace") -- this is a rewrite of farmergreg/vim-lastplace
-    use({
-      "sitiom/nvim-numbertoggle",
-      config = function()
-        require("numbertoggle").setup()
-      end
-    })
     use({
       "kevinhwang91/nvim-hlslens",
       config = function()
