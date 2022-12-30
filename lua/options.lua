@@ -24,8 +24,8 @@ vim.opt.completeopt = "menuone,noselect" -- nvim-cmp
 vim.opt.signcolumn = "yes" -- always show the signcolumn
 vim.opt.termguicolors = true
 
--- {{{ Robert's options
--- Robert's extras
+-- {{{ my options
+-- my extras
 vim.opt.undofile = true
 vim.opt.listchars = "tab:[->,trail:⎵,extends:…,precedes:…,conceal:✮"
 vim.opt.splitright = true

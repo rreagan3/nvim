@@ -68,7 +68,7 @@ local mappings = {
     -- bufferline
     { "H", "<cmd>BufferLineCyclePrev<CR>" },
     { "L", "<cmd>BufferLineCycleNext<CR>" },
-    -- Robert's adds
+    -- my adds
     { "gf", ":edit <cfile><cr>" },
     { "<leader>ev", ":split $MYVIMRC" },
     { "<space>", "za" },
