@@ -41,8 +41,8 @@ local mappings = {
     -- escape clears highlighting
     { "<esc>", "<cmd>noh<cr><esc>" },
     -- hop words
-    { "f", "<cmd>HopWord<cr>" },
-    { "F", "<cmd>HopLine<cr>" },
+    -- { "f", "<cmd>HopWord<cr>" },
+    -- { "F", "<cmd>HopLine<cr>" },
     -- yank to end of line on Y
     { "Y", "y$" },
     -- lsp mappings
@@ -60,6 +60,7 @@ local mappings = {
         vim.diagnostic.goto_next(border_options)
       end,
     },
+    { '<leader><Tab>', vim.diagnostic.open_float },
     { "gD", vim.lsp.buf.declaration },
     { "gd", vim.lsp.buf.definition },
     { "gr", vim.lsp.buf.references },
@@ -68,11 +69,11 @@ local mappings = {
     { "H", "<cmd>BufferLineCyclePrev<CR>" },
     { "L", "<cmd>BufferLineCycleNext<CR>" },
     -- Robert's adds
-    { "gf", ":edit <cfile><cr>"},
+    { "gf", ":edit <cfile><cr>" },
     { "<leader>ev", ":split $MYVIMRC" },
     { "<space>", "za" },
     { "gV", "`[v`]" },
-    { "<leader>f", ":Format<CR>"},
+    { "<leader>f", ":Format<CR>" },
   },
   t = {
     -- Terminal mode

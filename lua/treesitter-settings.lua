@@ -1,18 +1,46 @@
 require("nvim-treesitter.configs").setup({
-  context_commentstring = {
-    enable = true,
-  },
+  context_commentstring = { enable = true, },
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   -- ignore_install = {}, -- List of parsers to ignore installing
   auto_install = true,
-  highlight = {
-    enable = true, -- false will disable the whole extension
-    -- disable = { "html" }, -- FIX: disabled for now https://github.com/nvim-treesitter/nvim-treesitter/issues/1788
-  },
+  highlight = { enable = true, },
   additional_vim_regex_highlighting = false,
   autotag = { enable = true },
-  indent = {
+  indent = { enable = true, },
+  incremental_selection = {
     enable = true,
+    keymaps = {
+      init_selection = '<leader><Space>',
+      node_incremental = '<leader><Space>',
+      scope_incremental = '<leader>;',
+      node_decremental = '<leader><BS>',
+    },
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.inner',
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        [']m'] = '@function.outer',
+        [']]'] = '@class.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+        ['[['] = '@class.outer',
+      },
+    },
   },
 })
 
