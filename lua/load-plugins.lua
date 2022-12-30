@@ -52,12 +52,7 @@ return require("packer").startup({
     })
 
     -- snippets
-    use({
-      "L3MON4D3/LuaSnip",
-      requires = {
-        "rafamadriz/friendly-snippets",
-      },
-    })
+    use({ "L3MON4D3/LuaSnip", requires = { "rafamadriz/friendly-snippets", }, })
 
     -- floatterm
     use("voldikss/vim-floaterm")
@@ -89,15 +84,6 @@ return require("packer").startup({
 
     -- hightlight matching tag in html,jsx etc.
     use("leafOfTree/vim-matchtag")
-
-    use({
-      "phaazon/hop.nvim",
-      as = "hop",
-      config = function()
-        require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-      end,
-    })
-
     -- Undotree
     use("mbbill/undotree")
 
@@ -118,25 +104,13 @@ return require("packer").startup({
     use("nanotech/jellybeans.vim")
 
     -- Trouble
-    use({
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup({})
-      end,
-    })
+    use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", })
 
     -- WhichKey
     use("folke/which-key.nvim")
 
     -- Todo comments
-    use({
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
-      config = function()
-        require("todo-comments").setup({})
-      end,
-    })
+    use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", })
 
     -- Colorizer
     use("norcalli/nvim-colorizer.lua")
@@ -180,76 +154,20 @@ return require("packer").startup({
 
     -- my old plugins
     use("ethanholz/nvim-lastplace") -- this is a rewrite of farmergreg/vim-lastplace
-    use({
-      "kevinhwang91/nvim-hlslens",
-      config = function()
-        require('hlslens').setup()
-
-        local kopts = { noremap = true, silent = true }
-
-        vim.api.nvim_set_keymap('n', 'n',
-          [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-          kopts)
-        vim.api.nvim_set_keymap('n', 'N',
-          [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-          kopts)
-        vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-        vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-        vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-        vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-
-        vim.api.nvim_set_keymap('n', '<Leader>l', ':noh<CR>', kopts)
-      end
-    })
+    use("sitiom/nvim-numbertoggle")
+    use("kevinhwang91/nvim-hlslens")
     use("junegunn/vim-peekaboo")
-    use({
-      "ahmedkhalf/project.nvim",
-      config = function()
-        require("project_nvim").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-    })
-    use({
-      "petertriho/nvim-scrollbar",
-      config = function()
-        require("scrollbar").setup()
-      end
-    })
-    use({
-      'lewis6991/gitsigns.nvim',
-      config = function()
-        require('gitsigns').setup()
-      end
-    })
+    use("ahmedkhalf/project.nvim")
+    use("petertriho/nvim-scrollbar")
+    use('lewis6991/gitsigns.nvim')
 
-    -- git blames?
+    -- git blames
     use('f-person/git-blame.nvim')
-
     use("wincent/terminus")
     use("roxma/vim-tmux-clipboard")
     use("alcesleo/vim-uppercase-sql")
-    use({
-      "frazrepo/vim-rainbow",
-      vim.cmd([[
-      syntax on
-      let g:rainbow_active = 1
-      ]])
-
-    })
-
-    -- use({
-    --   "lukas-reineke/indent-blankline.nvim",
-    --   config = function()
-    --     require("indent-blankline").setup {
-    --       -- for example, context is off by default, use this to turn it on
-    --       show_current_context = true,
-    --       show_current_context_start = true,
-    --     }
-    --   end
-    -- })
+    use("frazrepo/vim-rainbow")
+    use("lukas-reineke/indent-blankline.nvim")
 
   end,
 })

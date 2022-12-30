@@ -9,8 +9,8 @@ require("load-plugins")
 
 -- set up language servers
 -- require("nvim-lsp-installer").setup {}
-require("mason").setup {}
-require("mason-lspconfig").setup {}
+require("mason").setup()
+require("mason-lspconfig").setup()
 require("ls")
 
 -- set up treesitter
@@ -35,6 +35,15 @@ require("telescope-settings")
 require("theme-settings")
 require("undo-tree-settings")
 require("whichkey-settings")
+require("hlslens-settings")
+
+-- inline setups
+require("trouble").setup()
+require("project_nvim").setup()
+require("todo-comments").setup()
+require("scrollbar").setup()
+require('gitsigns').setup()
+vim.cmd([[ syntax on let g:rainbow_active = 1 ]])
 
 -- keymappings
 require("keymappings")
