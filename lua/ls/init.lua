@@ -1,22 +1,28 @@
 -- require all language server modules
-require("ls.astro")
-require("ls.css")
-require("ls.deno")
-require("ls.emmet")
-require("ls.eslint")
-require("ls.go")
-require("ls.gql")
-require("ls.html")
-require("ls.json")
-require("ls.luals")
-require("ls.prisma")
-require("ls.python")
-require("ls.rust")
-require("ls.tailwind")
-require("ls.typescript")
-require("ls.vue")
-require("ls.yaml")
-require('ls.c')
+-- require("ls.astro")
+-- require("ls.css")
+-- require("ls.deno")
+-- require("ls.emmet")
+-- require("ls.eslint")
+-- require("ls.go")
+-- require("ls.gql")
+-- require("ls.html")
+-- require("ls.json")
+-- require("ls.luals")
+-- require("ls.prisma")
+-- require("ls.python")
+-- require("ls.rust")
+-- require("ls.tailwind")
+-- require("ls.typescript")
+-- require("ls.vue")
+-- require("ls.yaml")
+-- require('ls.c')
+
+require("mason-lspconfig").setup_handlers {
+  function (server_name)
+    require("lspconfig")[server_name].setup {}
+  end,
+}
 
 -- Customization and appearance -----------------------------------------
 -- change gutter diagnostic symbols

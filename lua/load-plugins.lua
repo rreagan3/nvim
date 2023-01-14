@@ -168,6 +168,12 @@ return require("packer").startup({
     use("alcesleo/vim-uppercase-sql")
     use("frazrepo/vim-rainbow")
     use("lukas-reineke/indent-blankline.nvim")
+    use('mattkubej/jest.nvim')
+    use { "johmsalas/text-case.nvim",
+      config = function()
+        require('textcase').setup {}
+      end
+    }
 
   end,
 })
