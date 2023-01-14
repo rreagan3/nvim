@@ -36,6 +36,7 @@ require("theme-settings")
 require("undo-tree-settings")
 require("whichkey-settings")
 require("hlslens-settings")
+require("indent-blankline-settings")
 
 -- inline setups
 require("trouble").setup()
