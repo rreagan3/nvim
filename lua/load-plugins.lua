@@ -175,5 +175,46 @@ return require("packer").startup({
       end
     }
 
+    use('wincent/terminus')
+    use('roxma/vim-tmux-clipboard')
+    use('alcesleo/vim-uppercase-sql')
+    use({
+      'frazrepo/vim-rainbow',
+      vim.cmd([[ syntax on let g:rainbow_active = 1 ]])
+    })
+
+    -- use({
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   config = function()
+    --     require("indent-blankline").setup {
+    --       -- for example, context is off by default, use this to turn it on
+    --       show_current_context = true,
+    --       show_current_context_start = true,
+    --     }
+    --   end
+    -- })
+
+    use {
+      'phaazon/mind.nvim',
+      branch = 'v2.2',
+      requires = { 'nvim-lua/plenary.nvim' },
+      config = function()
+        require('mind').setup()
+      end,
+    }
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    use('stevearc/dressing.nvim')
+    use({
+      "ziontee113/icon-picker.nvim",
+      config = function()
+        require("icon-picker").setup({
+          disable_legacy_commands = true
+        })
+      end,
+    })
+
   end,
 })

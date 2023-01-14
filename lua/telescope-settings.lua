@@ -46,9 +46,24 @@ telescope.setup({
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
   },
+  extensions = {
+    emoji = {
+      action = function(emoji)
+        -- argument emoji is a table.
+        -- {name="", value="", cagegory="", description=""}
+
+        vim.fn.setreg("*", emoji.value)
+        print([[Press p or "*p to paste this emoji]] .. emoji.value)
+
+        -- insert emoji when picked
+        -- vim.api.nvim_put({ emoji.value }, 'c', false, true)
+      end,
+    }
+  },
 })
 
 telescope.load_extension("session-lens")
 telescope.load_extension("textcase")
 vim.api.nvim_set_keymap('n', 'ga.', '<cmd>TextCaseOpenTelescope<CR>', { desc = "Telescope" })
 vim.api.nvim_set_keymap('v', 'ga.', "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+-- telescope.load_extension("emoji")

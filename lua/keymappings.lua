@@ -44,7 +44,7 @@ local mappings = {
     { "Y", "y$" },
     -- lsp mappings
     { "K", vim.lsp.buf.hover },
-    { "<C-k>", vim.lsp.buf.signature_help },
+    -- { "<C-k>", vim.lsp.buf.signature_help },
     {
       "[d",
       function()

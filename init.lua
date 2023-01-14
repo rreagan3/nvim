@@ -44,6 +44,7 @@ require("todo-comments").setup()
 require("scrollbar").setup()
 require('gitsigns').setup()
 vim.cmd([[ syntax on let g:rainbow_active = 1 ]])
+require("mind-settings")
 
 -- keymappings
 require("keymappings")

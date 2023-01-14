@@ -1,2 +1,2 @@
 require('lspconfig').clangd.setup({})
-require('lspconfig')['clangd-formatter'].setup({})
+-- require('lspconfig')['clang-formatter'].setup({})
