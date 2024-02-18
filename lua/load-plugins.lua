@@ -7,11 +7,21 @@ return require("packer").startup({
     use("christoomey/vim-tmux-navigator")
 
     -- lsp
-    use {
-      "williamboman/mason.nvim",
+    use ({
+      'williamboman/mason.nvim',
+      config = function()
+        require("mason").setup()
+      end
+    })
+    use ({
       "williamboman/mason-lspconfig.nvim",
+      config = function()
+        require("mason-lspconfig").setup()
+      end
+    })
+    use ({
       "neovim/nvim-lspconfig",
-    }
+    })
     use({
       'ray-x/navigator.lua',
       requires = {
@@ -163,10 +173,10 @@ return require("packer").startup({
 
     -- git blames
     use('f-person/git-blame.nvim')
-    use("wincent/terminus")
-    use("roxma/vim-tmux-clipboard")
-    use("alcesleo/vim-uppercase-sql")
-    use("frazrepo/vim-rainbow")
+    -- use("wincent/terminus")
+    -- use("roxma/vim-tmux-clipboard")
+    -- use("alcesleo/vim-uppercase-sql")
+    -- use("frazrepo/vim-rainbow")
     use("lukas-reineke/indent-blankline.nvim")
     use('mattkubej/jest.nvim')
     use { "johmsalas/text-case.nvim",

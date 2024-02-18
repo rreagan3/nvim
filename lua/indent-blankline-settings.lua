@@ -1,29 +1,24 @@
-vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#c9a7aa gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#e8c8a7 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#d3d4a1 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#a7bf95 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#9dbfc2 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#88a0b3 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent7 guifg=#9fa6cc gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent8 guifg=#b2a1c9 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent9 guifg=#cfa5c9 gui=nocombine]]
-
--- vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.listchars:append "eol:↴"
-
-require("indent_blankline").setup {
-  space_char_blankline = " ",
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-    "IndentBlanklineIndent3",
-    "IndentBlanklineIndent4",
-    "IndentBlanklineIndent5",
-    "IndentBlanklineIndent6",
-    "IndentBlanklineIndent7",
-    "IndentBlanklineIndent8",
-    "IndentBlanklineIndent9",
-  },
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
 }
+
+local hooks = require "ibl.hooks"
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+
+require("ibl").setup { indent = { highlight = highlight } }
